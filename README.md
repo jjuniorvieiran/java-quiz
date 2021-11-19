@@ -1,5 +1,4 @@
-Clone the following repository:
-https://gitlab.com/mostdev/java-quiz
+
 
 You should install and config in your local machine: Java; MongoDB and Maven. 
 Below the specific version.

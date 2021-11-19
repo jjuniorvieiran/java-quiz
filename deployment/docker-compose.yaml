@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  app:
+    build: quizApp/.
+    container_name: quiz-app
+    ports:
+      - 8005:8005
+    networks:
+      - production_network
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: quiz-mongo
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      - production_network
+    volumes:
+      # $HOME/db:/data/db
+      # $HOME/db:/data/bkp
+      - /Users/josejunior/dev/git/yacht-java-quiz-local-gitlab/volume/db:/data/db
+      - /Users/josejunior/dev/git/yacht-java-quiz-local-gitlab/volume/db:/data/bkp
+networks: 
+  production_network:
+    driver: bridge

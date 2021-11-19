@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="css/components.css" media="screen,projection" />
+	<link rel="apple-touch-icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<title>Yacht Quiz Center</title>
+</head>
+<body class="scores-page">
+	<div class="background-full-page background-full-page--results-page">
+		<div class="header">
+			<a th:href="@{${homeUrl}}">	
+				<img src="img/logo.png" /> 
+			</a>
+		</div>
+				
+		<div class="background-full-page__content">
+
+			<h1>Yacht Quiz Results</h1>
+
+			<!-- <h4>Lorem ipsum dolor sit amet, alia aperiri perfecto id vix.</h4> -->
+			<div class="card">
+		    	<div class="card-content">
+		    		<!-- <div class="results-trophy">
+			    		<div>
+			    			<img src="img/trophy-silver.png" />
+			    			<h4>Thayná Oliveira</h4>
+			    			<p>5 / 00:00:00</p>
+		    			</div>
+		    			<div>
+		    				<img src="img/trophy-gold.png" />
+		    				<h4>Thayná Oliveira</h4>
+		    				<p>5 / 00:00:00</p>
+		    			</div>
+		    			<div>	
+		    				<img src="img/trophy-bronze.png" />
+		    				<h4>Thayná Oliveira</h4>
+		    				<p>5 / 00:00:00</p>
+		    			</div>
+		    		</div> -->
+			    	<div class="table-content-scroll">
+			    		<table class="highlight centered responsive-table">
+					      	<thead>
+					        	<tr>
+						         	<th>#</th>
+						          	<th>NAME</th>
+						          	<th>SCORE</th>
+						          	<th>TIME</th>
+					        	</tr>
+					      	</thead>
+					      	<tbody>
+						        <tr th:each="user,iter : ${users}">
+						      	    <td><span th:text="${iter.count}"></span></td>
+						        	<td><span th:text="${user.name}"></span></td>
+						          	<td><span th:text="${user.userAnswerCorrect}"></span></td>
+						          	<td><span th:text="${user.timeDisplayGrid}"></span></td>
+						        </tr>
+					      	</tbody>
+					    </table>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+<!-- 
+  <h1 class="main-title center"><a th:href="@{${homeUrl}}"><b>YACHT</b> JAVA QUIZ</a></h1>
+  <h3 class="subtitle center">QUIZ RESULTS</h3>
+
+  <div class="container">
+    <table class="striped responsive-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>NAME</th>
+          <th>SCORE</th>
+          <th>TIME</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="user,iter : ${users}">
+          <td><span th:text="${iter.count}"></span></td>
+          <td><span th:text="${user.name}"></span></td>
+          <td style="text-align: right;"><span th:text="${user.userAnswerCorrect}"></span></td>
+          <td style="text-align: right;"><span th:text="${user.timeDisplayGrid}"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+</html>

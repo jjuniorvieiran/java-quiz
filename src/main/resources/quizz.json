@@ -1,0 +1,15 @@
+[{
+  "type": "java",
+  "description": "5 random questions, are you ready?",
+  "active": true
+},
+{
+  "type": "react",
+  "description": "Workshop React in practice, let's do it!",
+  "active": true
+},
+{
+  "type": "angular",
+  "description": "Angular Workshop, try it!",
+  "active": false
+}]

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" th:href="@{~/materialize/css/materialize.min.css}" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" th:href="@{~/css/main.css}" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" th:href="@{~/css/components.css}" media="screen,projection" />
+	<link rel="apple-touch-icon" th:href="@{~/img/favicon.png}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{~/img/favicon.png}" type="image/x-icon">
+	
+	<title>Yacht Quiz Center</title>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" th:src="@{~/js/inicializar.js}"></script>
+	<script type="text/javascript" th:src="@{~/materialize/js/materialize.min.js}"></script>
+</head>
+
+<body class="registration-page">
+
+	<div class="background-full-page">
+		<div class="header">
+			<a th:href="@{/questions/list}">	
+				<img th:src="@{~/img/logo.png}" />
+			</a>
+		</div>
+		
+		<div class="row">
+			<div class="card col s8 offset-s2">
+				<div class="card-content">
+					<h4>Add new question</h4>
+					<form action="#" th:action="@{saveQuestion}"
+					th:object="${question}" method="post">
+					
+						<div th:if="*{id != null}">
+						   	<input type="hidden" th:field="*{id}" />
+						</div>	
+						
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="question" type="text" th:field="*{question}" /> 
+								<label for="question">Question*</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="answer1" type="text" th:field="*{answer1}" /> 
+								<label for="answer1">Answer 1*</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="answer2" type="text" th:field="*{answer2}" /> 
+								<label for="answer2">Answer 2*</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">
+								<input id="answer3" type="text" th:field="*{answer3}" /> 
+								<label for="answer3">Answer 3*</label>
+							</div>
+							<div class="input-field col s6">
+								<input id="answer4" type="text" th:field="*{answer4}" /> 
+								<label for="answer4">Answer 4*</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s6">	
+								<input id="quizType" type="text" list="quizTypes" th:field="*{quizType}">
+									<datalist id="quizTypes">
+										<option value="" disabled selected>Choose your option</option>
+		                            	<option th:each="availableType : ${quizTypes}"
+			                               	th:value="${availableType}" 
+			                               	th:text="${availableType}">
+		                               	</option>
+			                        </datalist>
+		                   		<label for="quizType">Select existing quiz type or create new*</label>
+							</div>
+							<div class="input-field col s6">
+								<select th:field="*{answerCorrect}">
+									<option value="" disabled selected>Choose your option</option>
+									<option th:value="1">Answer 1</option>
+									<option th:value="2">Answer 2</option>
+									<option th:value="3">Answer 3</option>
+									<option th:value="4">Answer 4</option>
+								</select>
+								<label>Select correct answer*</label>
+							</div>
+						</div>
+						<div class="row">
+							<p class="error-message" th:if="${#fields.hasErrors('all')}" th:errors="*{all}">error message</p>
+						</div>
+						<div class="row">
+							<div class="col s12 center">
+								<button class="btn waves-effect waves-light" type="submit" name="action">Save question</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

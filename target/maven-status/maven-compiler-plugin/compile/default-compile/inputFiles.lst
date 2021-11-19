@@ -1,0 +1,11 @@
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/controller/QuizController.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/codecs/QuestionCodec.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/JavaquizApplication.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/repository/QuizQuestionRepository.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/repository/UserRepository.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/controller/QuizQuestionController.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/models/Question.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/utils/QuizUtils.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/models/User.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/codecs/UserCodec.java
+/Users/josejunior/dev/git/Yacht/yacht-java-quiz/src/main/java/nl/com/yacht/jspring/javaquiz/controller/AdminController.java
